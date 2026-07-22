@@ -34,7 +34,7 @@
     "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.0",
+    "@babel/core": "^8.0.1",
     "@eslint/eslintrc": "^3.3.6",
     "@eslint/js": "^10.0.1",
     "@testing-library/react-native": "^12.9.0",
