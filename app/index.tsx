@@ -11,7 +11,11 @@ const REPO = 'facebook/react';
 
 export default function Home() {
   const { t, toggle } = useI18n();
-  const stars = useQuery({ queryKey: ['stars', REPO], queryFn: () => fetchRepoStats(REPO), enabled: false });
+  const stars = useQuery({
+    queryKey: ['stars', REPO],
+    queryFn: () => fetchRepoStats(REPO),
+    enabled: false,
+  });
 
   return (
     <SafeAreaView className="flex-1 bg-slate-950" edges={['bottom']}>
@@ -35,9 +39,7 @@ export default function Home() {
           <Button onPress={() => stars.refetch()} disabled={stars.isFetching}>
             {stars.isFetching ? t.loading : t.fetch}
           </Button>
-          {stars.error && (
-            <Text className="text-red-400">{(stars.error as Error).message}</Text>
-          )}
+          {stars.error && <Text className="text-red-400">{(stars.error as Error).message}</Text>}
           {stars.data && (
             <Text className="text-emerald-400">
               {t.stars_label}: {stars.data.stargazers_count.toLocaleString('en-US')}

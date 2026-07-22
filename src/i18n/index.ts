@@ -14,9 +14,11 @@ export const en = {
   decrement: 'Decrement',
   reset: 'Reset',
   lang_switch: 'FR',
-} as const;
+};
 
-export const fr: typeof en = {
+export type Dict = typeof en;
+
+export const fr: Dict = {
   title: 'Starter Skilluv',
   tagline: 'Expo SDK 52 + Expo Router + NativeWind + TanStack Query.',
   home: 'Accueil',
@@ -36,4 +38,3 @@ export const fr: typeof en = {
 
 export const dictionaries = { en, fr } as const;
 export type Lang = keyof typeof dictionaries;
-export type Dict = typeof en;
